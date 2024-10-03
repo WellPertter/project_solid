@@ -129,6 +129,8 @@
         </DCCReference>
         <DCCReference Include="..\class\untSolidContadorInterface.pas"/>
         <DCCReference Include="..\class\untSolidContadorClass.pas"/>
+        <DCCReference Include="..\interface\untInterfaceSOLID.pas"/>
+        <DCCReference Include="..\class\untConexaoSOLID.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
