@@ -3,13 +3,23 @@ unit untInterfaceSOLID;
 interface
 
 uses
-  FireDAC.Comp.Client;
-
+  FireDAC.Comp.Client, Data.DB;
 type
   IConexao = interface
     ['{DBDBE8A5-0C29-4E85-9BA4-A84183F2D521}']
 
-  function GetConexao: TFDConnection;
+    procedure Conectar;
+    procedure Desconectar;
+    function GetConexao: TFDConnection;
+  end;
+
+  IQuery = interface
+    ['{91CDE3D3-CB5E-40FD-8012-B6AE34420797}']
+
+    Function Base: TDataset;
+    Function Sql(Sql: string): IQuery;
+    Function Params(Param, Value: String): IQuery;
+    Function ExecSQL: TDataset;
   end;
 
 implementation

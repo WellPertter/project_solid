@@ -8,22 +8,26 @@ uses
   untConexaoSOLID, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Error,
   FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool,
   FireDAC.Stan.Async, FireDAC.Phys, FireDAC.VCLUI.Wait, Data.DB,
-  FireDAC.Comp.Client;
+  FireDAC.Comp.Client, untQuerySOLID;
 
 type
   TForm1 = class(TForm)
     Button1: TButton;
     Button2: TButton;
     Button3: TButton;
+    Button4: TButton;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
   private
     FContador: TContador;
-    FConexa: TConexao;
+
     { Private declarations }
   public
+      FConexa: TConexao;
+    FQuery: TQuery;
     { Public declarations }
   end;
 
@@ -53,7 +57,19 @@ end;
 
 procedure TForm1.Button3Click(Sender: TObject);
 begin
-  FConexa := TConexao.Create('localhost', 'bluesky', 'root', 'root@2024');
+  FConexa := TConexao.Create('localhost', '', '', '');
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+begin
+  FQuery := TQuery.Create(FConexa.GetConexao);
+
+  FQuery.Sql('select * from tab_proprietario');
+  ShowMessage(FQuery.ExecSQL.FieldByName('nome').Asstring);
+
+ //FQuery.Sql('select * from tab_parametros');
+  FQuery.Base.Next;
+  ShowMessage(FQuery.Base.FieldByName('nome').Asstring);
 end;
 
 end.

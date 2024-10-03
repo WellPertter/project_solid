@@ -3,8 +3,8 @@ unit untConexaoSOLID;
 interface
 
 uses
-  FireDAC.Comp.Client, untInterfaceSOLID, FireDAC.Stan.Def,
-  FireDAC.Phys.MySQLDef, FireDAC.Phys.MySQL;
+  untInterfaceSOLID, FireDAC.Stan.Def,
+  FireDAC.Phys.MySQLDef, FireDAC.Phys.MySQL, FireDAC.Comp.Client;
 
 type
   TConexao = class(TInterfacedObject, IConexao)
@@ -17,12 +17,21 @@ type
       aVendorLib: string = '\libmysql.dll'; aDrive: string = 'MySQL');
     destructor Destroy; override;
 
+
+    procedure Conectar;
+    procedure Desconectar;
     function GetConexao: TFDConnection;
   end;
 
 implementation
 
 { TConexao }
+
+procedure TConexao.Conectar;
+begin
+  if not FConexao.Connected then
+    FConexao.Connected := True;
+end;
 
 constructor TConexao.Create(AServer, ADataBase, aUser, APassword, aVendorLib,
   aDrive: string);
@@ -40,6 +49,12 @@ begin
   FConexao.Params.Add('Server=' + AServer);
 
   FConexao.Connected := True;
+end;
+
+procedure TConexao.Desconectar;
+begin
+  if FConexao.Connected then
+    FConexao.Connected := False;
 end;
 
 destructor TConexao.Destroy;

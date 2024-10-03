@@ -10,8 +10,10 @@ object Form1: TForm1
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OldCreateOrder = True
   Position = poDesktopCenter
   OnCreate = FormCreate
+  PixelsPerInch = 96
   TextHeight = 15
   object Button1: TButton
     Left = 8
@@ -39,5 +41,14 @@ object Form1: TForm1
     Caption = 'Conectar'
     TabOrder = 2
     OnClick = Button3Click
+  end
+  object Button4: TButton
+    Left = 176
+    Top = 88
+    Width = 89
+    Height = 25
+    Caption = 'Busca simples'
+    TabOrder = 3
+    OnClick = Button4Click
   end
 end

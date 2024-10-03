@@ -1,0 +1,79 @@
+unit untQuerySOLID;
+
+interface
+
+uses
+  untInterfaceSOLID, Data.DB, FireDAC.Comp.Client, FireDAC.Stan.Def,
+  FireDAC.Phys.MySQLDef, FireDAC.Phys.MySQL;
+
+type
+  TQuery = class(TInterfacedObject, IQuery)
+    FQuery: TFDQuery;
+    FConn: TFDConnection;
+    FSQL: string;
+
+  public
+    constructor Create(Conexao: TFDConnection);
+    destructor Destroy; override;
+
+    Function Base: TDataset;
+    Function Sql(Sql: string): IQuery;
+    Function Params(Param, Value: String): IQuery;
+    Function ExecSQL: TDataset;
+  end;
+
+implementation
+
+uses
+  System.SysUtils;
+
+{ TQuery }
+
+function TQuery.Base: TDataset;
+begin
+  Result := FQuery;
+end;
+
+constructor TQuery.Create(Conexao: TFDConnection);
+begin
+  FConn := Conexao;
+
+  FQuery := TFDQuery.Create(nil);
+  FQuery.Connection := FConn;
+end;
+
+destructor TQuery.Destroy;
+begin
+  FQuery.Free;
+  inherited;
+end;
+
+function TQuery.ExecSQL: TDataset;
+begin
+
+  if Pos('SELECT', UpperCase(FSQL)) > 0 then
+    FQuery.Open
+  else
+    FQuery.ExecSQL;
+
+  Result := FQuery;
+end;
+
+function TQuery.Params(Param, Value: String): IQuery;
+begin
+  Result := Self;
+  FQuery.ParamByName(Param).Value := Value;
+end;
+
+function TQuery.Sql(Sql: string): IQuery;
+begin
+  Result := Self;
+
+  FSQL := Sql;
+
+  FQuery.Close;
+  FQuery.Sql.Clear;
+  FQuery.Sql.Add(FSQL);
+end;
+
+end.

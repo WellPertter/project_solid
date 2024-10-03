@@ -3,16 +3,18 @@
 	<Transactions>
     <Transaction>2024/09/21 19:51:07.000.392,=C:\Users\José Arthur\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2024/09/29 17:53:02.000.129,=C:\Users\José Arthur\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2024/09/29 20:57:25.000.742,C:\Users\José Arthur\Desktop\project_solid\view\untMain.dfm=C:\Users\José Arthur\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2024/09/29 20:57:25.000.742,C:\Users\José Arthur\Desktop\project_solid\view\untMain.pas=C:\Users\José Arthur\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2024/09/29 20:57:41.000.449,C:\Users\José Arthur\Desktop\project_solid\bin\SOLID.dproj=C:\Users\José Arthur\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2024/09/29 20:57:25.000.742,C:\Users\José Arthur\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\José Arthur\Desktop\project_solid\view\untMain.pas</Transaction>
+    <Transaction>2024/09/29 20:57:25.000.742,C:\Users\José Arthur\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\José Arthur\Desktop\project_solid\view\untMain.dfm</Transaction>
+    <Transaction>2024/09/29 20:57:41.000.449,C:\Users\José Arthur\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\José Arthur\Desktop\project_solid\bin\SOLID.dproj</Transaction>
     <Transaction>2024/09/29 21:06:19.000.640,=C:\Users\José Arthur\Desktop\project_solid\bin\Unit1.pas</Transaction>
-    <Transaction>2024/09/29 21:10:40.000.306,C:\Users\José Arthur\Desktop\project_solid\class\untSolidContadorInterface.pas=C:\Users\José Arthur\Desktop\project_solid\bin\Unit1.pas</Transaction>
+    <Transaction>2024/09/29 21:10:40.000.306,C:\Users\José Arthur\Desktop\project_solid\bin\Unit1.pas=C:\Users\José Arthur\Desktop\project_solid\class\untSolidContadorInterface.pas</Transaction>
     <Transaction>2024/09/29 21:10:48.000.349,=C:\Users\José Arthur\Desktop\project_solid\bin\Unit1.pas</Transaction>
-    <Transaction>2024/09/29 21:15:25.000.085,C:\Users\José Arthur\Desktop\project_solid\class\untSolidContadorClass.pas=C:\Users\José Arthur\Desktop\project_solid\bin\Unit1.pas</Transaction>
-    <Transaction>2024/10/02 20:39:09.296,=C:\Users\José Arthur\Documents\Dev\project_solid\bin\Unit1.pas</Transaction>
-    <Transaction>2024/10/02 20:47:24.321,C:\Users\José Arthur\Documents\Dev\project_solid\interface\untInterfaceSOLID.pas=C:\Users\José Arthur\Documents\Dev\project_solid\bin\Unit1.pas</Transaction>
-    <Transaction>2024/10/02 20:47:44.716,=C:\Users\José Arthur\Documents\Dev\project_solid\bin\Unit1.pas</Transaction>
-    <Transaction>2024/10/02 20:50:38.042,C:\Users\José Arthur\Documents\Dev\project_solid\class\untConexaoSOLID.pas=C:\Users\José Arthur\Documents\Dev\project_solid\bin\Unit1.pas</Transaction>
+    <Transaction>2024/09/29 21:15:25.000.085,C:\Users\José Arthur\Desktop\project_solid\bin\Unit1.pas=C:\Users\José Arthur\Desktop\project_solid\class\untSolidContadorClass.pas</Transaction>
+    <Transaction>2024/10/02 20:39:09.000.296,=C:\Users\José Arthur\Documents\Dev\project_solid\bin\Unit1.pas</Transaction>
+    <Transaction>2024/10/02 20:47:24.000.321,C:\Users\José Arthur\Documents\Dev\project_solid\bin\Unit1.pas=C:\Users\José Arthur\Documents\Dev\project_solid\interface\untInterfaceSOLID.pas</Transaction>
+    <Transaction>2024/10/02 20:47:44.000.716,=C:\Users\José Arthur\Documents\Dev\project_solid\bin\Unit1.pas</Transaction>
+    <Transaction>2024/10/02 20:50:38.000.042,C:\Users\José Arthur\Documents\Dev\project_solid\bin\Unit1.pas=C:\Users\José Arthur\Documents\Dev\project_solid\class\untConexaoSOLID.pas</Transaction>
+    <Transaction>2024/10/03 10:00:01.502,=C:\Users\desenv\Desktop\project_solid\bin\Unit1.pas</Transaction>
+    <Transaction>2024/10/03 10:04:19.158,C:\Users\desenv\Desktop\project_solid\class\untQuerySOLID.pas=C:\Users\desenv\Desktop\project_solid\bin\Unit1.pas</Transaction>
   </Transactions>
 </BorlandProject>

@@ -6,7 +6,8 @@ uses
   untSolidContadorInterface in '..\class\untSolidContadorInterface.pas',
   untSolidContadorClass in '..\class\untSolidContadorClass.pas',
   untInterfaceSOLID in '..\interface\untInterfaceSOLID.pas',
-  untConexaoSOLID in '..\class\untConexaoSOLID.pas';
+  untConexaoSOLID in '..\class\untConexaoSOLID.pas',
+  untQuerySOLID in '..\class\untQuerySOLID.pas';
 
 {$R *.res}
 
