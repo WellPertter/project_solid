@@ -35,17 +35,10 @@ end;
 
 constructor TQuery.Create(Conexao: TFDConnection);
 begin
+  FConn := Conexao;
 
-  try
-    FConn := Conexao;
-
-    FQuery := TFDQuery.Create(nil);
-    FQuery.Connection := FConn;
-  except
-    on E: Exception do
-      Writeln('Ocorreu um erro: ', E.Message);
-  end;
-
+  FQuery := TFDQuery.Create(nil);
+  FQuery.Connection := FConn;
 end;
 
 destructor TQuery.Destroy;
@@ -67,6 +60,8 @@ begin
     on E: Exception do
       Writeln('Ocorreu um erro: ', E.Message);
   end;
+
+
 end;
 
 function TQuery.Params(Param, Value: String): IQuery;

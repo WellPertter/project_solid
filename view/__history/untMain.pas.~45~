@@ -24,7 +24,6 @@ type
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
-    procedure Button6Click(Sender: TObject);
   private
     FContador: TContador;
 
@@ -79,11 +78,6 @@ procedure TForm1.Button5Click(Sender: TObject);
 begin
   FQuery.Base.Next;
   ShowMessage(FQuery.Base.FieldByName('descricao').Asstring);
-end;
-
-procedure TForm1.Button6Click(Sender: TObject);
-begin
-  TGerenciarScreens.GetInstance.OpenTheScreen('frmmain')
 end;
 
 end.

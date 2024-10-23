@@ -37,14 +37,15 @@ constructor TQuery.Create(Conexao: TFDConnection);
 begin
 
   try
-    FConn := Conexao;
+  FConn := Conexao;
 
-    FQuery := TFDQuery.Create(nil);
-    FQuery.Connection := FConn;
+  FQuery := TFDQuery.Create(nil);
+  FQuery.Connection := FConn;
   except
     on E: Exception do
       Writeln('Ocorreu um erro: ', E.Message);
   end;
+
 
 end;
 

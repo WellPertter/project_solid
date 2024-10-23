@@ -1,0 +1,52 @@
+unit untGerenciarScreensSOLID;
+
+
+interface
+
+uses
+  untInterfaceSOLID;
+
+type
+  TGerenciarScreens = class(TInterfacedObject, IGerenciarScreens)
+  private
+    class var FInstance: TGerenciarScreens;  // Instância única
+  public
+    class function GetInstance: TGerenciarScreens;  // Método para obter a instância
+
+    class var FGereric: TGerenciarScreens;
+    procedure OpenTheScreen(screen: string; sistema:string='');
+    procedure OpenMain(screen: string);
+  end;
+
+implementation
+
+uses untScreen;
+
+var
+ GerenciarScreens:TGerenciarScreens;
+
+{ TGerenciarScreens }
+
+class function TGerenciarScreens.GetInstance: TGerenciarScreens;
+begin
+  if FInstance = nil then
+    FInstance := TGerenciarScreens.Create;  // Cria a instância se não existir
+
+  Result := FInstance;
+end;
+
+procedure TGerenciarScreens.OpenMain(screen: string);
+begin
+  if frm2 = nil then
+    frm2 := frm2.Create(nil);
+
+  frm2.Show;
+end;
+
+procedure TGerenciarScreens.OpenTheScreen(screen, sistema: string);
+begin
+  if screen = 'frmmain' then
+    OpenMain(sistema);
+end;
+
+end.

@@ -22,12 +22,6 @@ type
     Function ExecSQL: TDataset;
   end;
 
-  IGerenciarScreens = interface
-    ['{22EFA201-610C-4882-8AFF-F0B609158525}']
-    procedure OpenTheScreen(screen: string; sistema:string='');
-    procedure OpenMain(screen: string);
-  end;
-
 implementation
 
 end.

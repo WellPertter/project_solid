@@ -16,15 +16,11 @@ type
     Button2: TButton;
     Button3: TButton;
     Button4: TButton;
-    Button5: TButton;
-    Button6: TButton;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
-    procedure Button5Click(Sender: TObject);
-    procedure Button6Click(Sender: TObject);
   private
     FContador: TContador;
 
@@ -39,9 +35,6 @@ var
   Form1: TForm1;
 
 implementation
-
-uses
-  untGerenciarScreensSOLID;
 
 {$R *.dfm}
 
@@ -71,19 +64,12 @@ procedure TForm1.Button4Click(Sender: TObject);
 begin
   FQuery := TQuery.Create(FConexa.GetConexao);
 
-  FQuery.Sql('select * from tab_categoria');
-  ShowMessage(FQuery.ExecSQL.FieldByName('descricao').Asstring);
-end;
+  FQuery.Sql('select * from tab_proprietario');
+  ShowMessage(FQuery.ExecSQL.FieldByName('nome').Asstring);
 
-procedure TForm1.Button5Click(Sender: TObject);
-begin
+ //FQuery.Sql('select * from tab_parametros');
   FQuery.Base.Next;
-  ShowMessage(FQuery.Base.FieldByName('descricao').Asstring);
-end;
-
-procedure TForm1.Button6Click(Sender: TObject);
-begin
-  TGerenciarScreens.GetInstance.OpenTheScreen('frmmain')
+  ShowMessage(FQuery.Base.FieldByName('nome').Asstring);
 end;
 
 end.

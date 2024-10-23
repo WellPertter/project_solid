@@ -37,15 +37,20 @@ constructor TQuery.Create(Conexao: TFDConnection);
 begin
 
   try
-    FConn := Conexao;
+    if Pos('SELECT', UpperCase(FSQL)) > 0 then
+      FQuery.Open
+    else
+      FQuery.ExecSQL;
 
-    FQuery := TFDQuery.Create(nil);
-    FQuery.Connection := FConn;
+    Result := FQuery;
   except
     on E: Exception do
       Writeln('Ocorreu um erro: ', E.Message);
   end;
+  FConn := Conexao;
 
+  FQuery := TFDQuery.Create(nil);
+  FQuery.Connection := FConn;
 end;
 
 destructor TQuery.Destroy;

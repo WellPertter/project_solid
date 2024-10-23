@@ -35,17 +35,10 @@ end;
 
 constructor TQuery.Create(Conexao: TFDConnection);
 begin
+  FConn := Conexao;
 
-  try
-    FConn := Conexao;
-
-    FQuery := TFDQuery.Create(nil);
-    FQuery.Connection := FConn;
-  except
-    on E: Exception do
-      Writeln('Ocorreu um erro: ', E.Message);
-  end;
-
+  FQuery := TFDQuery.Create(nil);
+  FQuery.Connection := FConn;
 end;
 
 destructor TQuery.Destroy;
@@ -56,17 +49,13 @@ end;
 
 function TQuery.ExecSQL: TDataset;
 begin
-  try
-    if Pos('SELECT', UpperCase(FSQL)) > 0 then
-      FQuery.Open
-    else
-      FQuery.ExecSQL;
 
-    Result := FQuery;
-  except
-    on E: Exception do
-      Writeln('Ocorreu um erro: ', E.Message);
-  end;
+  if Pos('SELECT', UpperCase(FSQL)) > 0 then
+    FQuery.Open
+  else
+    FQuery.ExecSQL;
+
+  Result := FQuery;
 end;
 
 function TQuery.Params(Param, Value: String): IQuery;

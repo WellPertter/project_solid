@@ -83,7 +83,7 @@ end;
 
 procedure TForm1.Button6Click(Sender: TObject);
 begin
-  TGerenciarScreens.GetInstance.OpenTheScreen('frmmain')
+  GerenciarScreens.OpenTheScreen('frmmain');
 end;
 
 end.

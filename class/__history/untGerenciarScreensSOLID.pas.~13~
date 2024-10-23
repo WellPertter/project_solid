@@ -1,0 +1,42 @@
+unit untGerenciarScreensSOLID;
+
+
+interface
+
+uses
+  untInterfaceSOLID;
+
+type
+  TGerenciarScreens = class(TInterfacedObject, IGerenciarScreens)
+  private
+
+  public
+    class var FGereric: TGerenciarScreens;
+    procedure OpenTheScreen(screen: string; sistema:string='');
+    procedure OpenMain(screen: string);
+  end;
+
+implementation
+
+uses untScreen;
+
+var
+ GerenciarScreens:TGerenciarScreens;
+
+{ TGerenciarScreens }
+
+procedure TGerenciarScreens.OpenMain(screen: string);
+begin
+  if frm2 = nil then
+    frm2 := frm2.Create(nil);
+
+  frm2.Show;
+end;
+
+procedure TGerenciarScreens.OpenTheScreen(screen, sistema: string);
+begin
+  if screen = 'frmmain' then
+    OpenMain(sistema);
+end;
+
+end.

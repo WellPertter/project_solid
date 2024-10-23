@@ -35,17 +35,10 @@ end;
 
 constructor TQuery.Create(Conexao: TFDConnection);
 begin
+  FConn := Conexao;
 
-  try
-    FConn := Conexao;
-
-    FQuery := TFDQuery.Create(nil);
-    FQuery.Connection := FConn;
-  except
-    on E: Exception do
-      Writeln('Ocorreu um erro: ', E.Message);
-  end;
-
+  FQuery := TFDQuery.Create(nil);
+  FQuery.Connection := FConn;
 end;
 
 destructor TQuery.Destroy;
@@ -64,8 +57,10 @@ begin
 
     Result := FQuery;
   except
-    on E: Exception do
-      Writeln('Ocorreu um erro: ', E.Message);
+  on E: EDatabaseError do
+    Writeln('Erro de banco de dados: ', E.Message);  // Erros específicos de banco de dados
+  on E: Exception do
+    Writeln('Ocorreu um erro: ', E.Message);  // Outros erros genéricos
   end;
 end;
 

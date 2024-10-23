@@ -7,9 +7,7 @@ uses
   untSolidContadorClass in '..\class\untSolidContadorClass.pas',
   untInterfaceSOLID in '..\interface\untInterfaceSOLID.pas',
   untConexaoSOLID in '..\class\untConexaoSOLID.pas',
-  untQuerySOLID in '..\class\untQuerySOLID.pas',
-  untGerenciarScreensSOLID in '..\class\untGerenciarScreensSOLID.pas',
-  untScreen in '..\view\untScreen.pas' {frm2};
+  untQuerySOLID in '..\class\untQuerySOLID.pas';
 
 {$R *.res}
 
@@ -17,6 +15,5 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TForm1, Form1);
-  Application.CreateForm(Tfrm2, frm2);
   Application.Run;
 end.
